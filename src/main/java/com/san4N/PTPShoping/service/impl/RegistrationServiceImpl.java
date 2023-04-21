@@ -18,7 +18,8 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     public UserDTO register(RegistrationDTO registrationDTO) {
         User user = RegistrationDTOMapper.INSTANCE.getUser(registrationDTO);
+        user.setStatus(User.NEW);
         User savedUser = userRepository.save(user);
-        return UserDTOMapper.INSTANCE.getUserDTO(savedUser);
+        return UserDTOMapper.INSTANCE.getUserDTOFromUser(savedUser);
     }
 }

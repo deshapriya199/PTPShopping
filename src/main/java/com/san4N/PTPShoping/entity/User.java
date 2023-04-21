@@ -1,10 +1,9 @@
 package com.san4N.PTPShoping.entity;
 
+import com.san4N.PTPShoping.common.dataType.Status;
+import com.san4N.PTPShoping.entity.common.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,11 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "USERS")
 @Data
 @NoArgsConstructor
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column
-    private Long id;
+public class User extends BaseEntity {
 
     @Column(nullable = false, length = 255)
     private String name;
@@ -30,4 +25,6 @@ public class User {
 
     @Column(nullable = false, length = 255)
     private String password;
+
+    public static final Status NEW = Status.valueOf("New");
 }
