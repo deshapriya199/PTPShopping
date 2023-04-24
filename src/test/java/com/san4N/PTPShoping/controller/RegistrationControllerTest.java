@@ -33,7 +33,7 @@ public class RegistrationControllerTest {
                 .build();
 
         UserDTO userDTO = UserDTO.builder()
-                .id(1l)
+                .id(1L)
                 .email("sample@gmail.com")
                 .userName("sample")
                 .name("sample")

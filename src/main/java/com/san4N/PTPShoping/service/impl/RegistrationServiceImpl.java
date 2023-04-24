@@ -10,6 +10,8 @@ import com.san4N.PTPShoping.service.RegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class RegistrationServiceImpl implements RegistrationService {
@@ -18,8 +20,14 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     public UserDTO register(RegistrationDTO registrationDTO) {
         User user = RegistrationDTOMapper.INSTANCE.getUser(registrationDTO);
-        user.setStatus(User.NEW);
+        user.setStatus(User.STATUS_NEW);
         User savedUser = userRepository.save(user);
         return UserDTOMapper.INSTANCE.getUserDTOFromUser(savedUser);
+    }
+
+    @Override
+    public void activate(Long userId, String secret) {
+        Optional<User> userOptional = userRepository.findById(userId);
+        userOptional.ifPresent(user -> userRepository.activate(userId));
     }
 }

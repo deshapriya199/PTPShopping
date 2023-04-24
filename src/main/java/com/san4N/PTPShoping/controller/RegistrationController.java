@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,12 @@ public class RegistrationController {
     public ResponseEntity<UserDTO> register(@Valid @RequestBody RegistrationDTO registrationDTO){
         UserDTO userDTO = registrationService.register(registrationDTO);
         return new ResponseEntity<>(userDTO, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/{userId}/{secret}")
+    public ResponseEntity<String> activate(@PathVariable Long userId, @PathVariable String secret){
+        registrationService.activate(userId, secret);
+        return ResponseEntity.ok().body("Activated...");
     }
 
 }

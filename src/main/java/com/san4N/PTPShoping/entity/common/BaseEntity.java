@@ -1,7 +1,9 @@
 package com.san4N.PTPShoping.entity.common;
 
-import com.san4N.PTPShoping.common.dataType.Status;
+import com.san4N.PTPShoping.enums.Status;
 import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -36,6 +38,7 @@ public abstract class BaseEntity {
     @Version
     private Integer modRev;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @PrePersist
