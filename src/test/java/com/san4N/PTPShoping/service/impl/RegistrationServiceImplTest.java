@@ -37,7 +37,7 @@ class UserServiceTest {
         User user = RegistrationDTOMapper.INSTANCE.getUser(registrationDTO);
         User savedUser = new User();
         savedUser.setId(1L);
-        savedUser.setUserName(user.getUserName());
+        savedUser.setUserName(user.getUsername());
         savedUser.setEmail(user.getEmail());
         savedUser.setName(user.getName());
 
@@ -46,7 +46,7 @@ class UserServiceTest {
         UserDTO userDTO = registrationService.register(registrationDTO);
 
         Assertions.assertNotNull(userDTO.id());
-        Assertions.assertEquals(savedUser.getUserName(), userDTO.userName());
+        Assertions.assertEquals(savedUser.getUsername(), userDTO.userName());
         Assertions.assertEquals(savedUser.getEmail(), userDTO.email());
         Assertions.assertEquals(savedUser.getName(), userDTO.name());
 

@@ -7,5 +7,5 @@ public interface RegistrationService {
 
     UserDTO register(RegistrationDTO registrationDTO);
 
-    void activate(Long userId, String secret);
+    int activate(Long userId, String secret);
 }
