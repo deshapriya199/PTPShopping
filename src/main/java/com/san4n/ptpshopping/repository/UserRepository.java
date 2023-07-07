@@ -1,6 +1,6 @@
 package com.san4n.ptpshopping.repository;
 
-import com.san4n.ptpshopping.entity.User;
+import com.san4n.ptpshopping.entity.core.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

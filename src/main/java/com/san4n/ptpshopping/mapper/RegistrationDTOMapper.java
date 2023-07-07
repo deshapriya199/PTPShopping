@@ -1,7 +1,7 @@
 package com.san4n.ptpshopping.mapper;
 
 import com.san4n.ptpshopping.dto.RegistrationDTO;
-import com.san4n.ptpshopping.entity.User;
+import com.san4n.ptpshopping.entity.core.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

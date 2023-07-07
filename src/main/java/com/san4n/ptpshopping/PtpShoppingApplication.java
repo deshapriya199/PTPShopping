@@ -1,8 +1,8 @@
 package com.san4n.ptpshopping;
 
-import com.san4n.ptpshopping.entity.Role;
-import com.san4n.ptpshopping.entity.User;
-import com.san4n.ptpshopping.entity.UserRole;
+import com.san4n.ptpshopping.entity.core.Role;
+import com.san4n.ptpshopping.entity.core.User;
+import com.san4n.ptpshopping.entity.core.UserRole;
 import com.san4n.ptpshopping.repository.RoleRepository;
 import com.san4n.ptpshopping.repository.UserRepository;
 import com.san4n.ptpshopping.repository.UserRoleRepository;

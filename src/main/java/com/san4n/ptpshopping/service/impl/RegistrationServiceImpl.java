@@ -2,7 +2,7 @@ package com.san4n.ptpshopping.service.impl;
 
 import com.san4n.ptpshopping.dto.RegistrationDTO;
 import com.san4n.ptpshopping.dto.UserDTO;
-import com.san4n.ptpshopping.entity.User;
+import com.san4n.ptpshopping.entity.core.User;
 import com.san4n.ptpshopping.mapper.RegistrationDTOMapper;
 import com.san4n.ptpshopping.mapper.UserDTOMapper;
 import com.san4n.ptpshopping.repository.UserRepository;
